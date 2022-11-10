@@ -1,27 +1,6 @@
-# variable "google_bucket_name" {
-#   description = "-(Required) The name of the deployment"
-# }
-
-# variable "google_domain_name" {
-#   description = "-(Required) The name of the deployment"
-# }
-
-# variable "google_project_id" {
-#   description = "-(Required) The name of the deployment"
-# }
-
-# variable "deployment_name" {
-#   description = "-(Required) The name of the deployment"
-# }
-
 variable "chart_name" {
   description = "-(Required) The name of the deployment"
   default     = "concourse"
-}
-
-variable "deployment_environment" {
-  description = "-(Required) The name of the environment"
-  default     = "sbx"
 }
 
 variable "deployment_endpoint" {
@@ -56,33 +35,7 @@ variable "chart_repo" {
 variable "chart_override_values" {
   description = "-(Optional)"
   default     = <<EOF
-concourse:
-  web:
-    clusterName: atandcorp-concourse
-    externalUrl: https://concourse.balloray.com
-    auth:
-      mainTeam:
-        localUser: "admin"
-web:
-  ingress:
-    enabled: true
-    annotations: 
-      kubernetes.io/ingress.class: nginx
-      cert-manager.io/cluster-issuer: letsencrypt-prod
-    hosts: 
-      - concourse.balloray.com
-    tls:
-      - secretName: concourse-web-tls
-        hosts:
-          - concourse.balloray.com
-worker:
-  replicas: 3
-postgresql:
-  auth:
-    username: concourse-postgresql
-    password: concourse-postgresql
-    database: concourse-postgresql
-secrets:
-  localUsers: "admin:test"
+provider: google
+
 EOF
 }
