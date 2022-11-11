@@ -1,10 +1,10 @@
 ## The remote chart deployment 
 resource "helm_release" "helm_deployment" {
   name                = var.chart_name
-  chart               = var.deployment_path
+  chart               = var.chart_path
   timeout             = var.timeout
   recreate_pods       = var.recreate_pods
-  version             = var.release_version
+  version             = var.chart_version
   repository          = var.chart_repo
 
   values = [

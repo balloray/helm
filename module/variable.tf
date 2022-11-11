@@ -1,21 +1,21 @@
 variable "chart_name" {
   description = "-(Required) The name of the deployment"
-  default     = "concourse"
+  default     = "external-dns"
 }
 
-variable "deployment_endpoint" {
-  description = "-(Optional) Endpoint for the application"
-  default     = "example.local"
-}
-
-variable "deployment_path" {
-  default     = "concourse"
+variable "chart_path" {
+  default     = "external-dns"
   description = "-(Required) Chart location or chart name <stable/example>"
 }
 
-variable "release_version" {
+variable "chart_version" {
   description = "-(Optional) Specify the exact chart version to install"
   default     = "17.0.37"
+}
+
+variable "chart_repo" {
+  default     = "https://charts.bitnami.com/bitnami"
+  description = "-(Optional) Provide the remote helm charts repository."
 }
 
 variable "timeout" {
@@ -27,15 +27,9 @@ variable "recreate_pods" {
   default     = false
 }
 
-variable "chart_repo" {
-  default     = "https://concourse-charts.storage.googleapis.com"
-  description = "-(Optional) Provide the remote helm charts repository."
-}
-
 variable "chart_override_values" {
   description = "-(Optional)"
   default     = <<EOF
 provider: google
-
 EOF
 }
