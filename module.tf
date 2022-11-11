@@ -1,5 +1,5 @@
 module "helm" {
-  source                  = "github.com/balloray/release"
+  source                  = "github.com/balloray/helm-chart"
   chart_name              = "external-dns"
   chart_path              = "external-dns"
   chart_version           = "6.1.4" 
