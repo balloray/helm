@@ -11,12 +11,12 @@ resource "helm_release" "remote_helm_deployment" {
   ]
 }
 
-resource "helm_release" "local_helmdeployment" {
-  name                = var.chart_name
-  chart               = var.chart_path
-  timeout             = var.timeout
-  recreate_pods       = var.recreate_pods
-  values = [
-    var.chart_override_values
-  ]
-}
+# resource "helm_release" "local_helmdeployment" {
+#   name                = var.chart_name
+#   chart               = var.chart_path
+#   timeout             = var.timeout
+#   recreate_pods       = var.recreate_pods
+#   values = [
+#     var.chart_override_values
+#   ]
+# }
