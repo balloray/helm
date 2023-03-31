@@ -18,6 +18,10 @@ variable "chart_repo" {
   description = "-(Optional) Provide the remote helm charts repository."
 }
 
+variable "chart_namespace" {
+  default = "400"
+}
+
 variable "timeout" {
   default = "400"
 }
