@@ -8,7 +8,7 @@ variable "chart_path" {
   description = "-(Required) Chart location or chart name <stable/example>"
 }
 
-variable "chart_ns" {
+variable "chart_namespace" {
   default = "400"
 }
 
