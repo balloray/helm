@@ -15,6 +15,7 @@ resource "helm_release" "local_helmdeployment" {
   name                = var.chart_name
   chart               = var.chart_path
   timeout             = var.timeout
+  namespace           = var.chart_ns
   recreate_pods       = var.recreate_pods
   values = [
     var.chart_override_values
